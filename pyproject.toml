@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "Final-project"
+version = "0.1.1"
+description = "This is the final project for the subject of Software design"
+authors = ["Andrés Vanegas <afvanegasb@udistrital.edu.co> Sergio Sanabria <sasanabriac@udistrital.edu.co>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.111.0"   
+sqlalchemy = "^2.0.30"
+pydantic = { version = "^2.7.2", extras = ["email"] }
+click = "^8.1.7"
+uvicorn = "^0.30.0"  
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.1"
+pylint = "^3.2.2"
+black = "^24.4.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
