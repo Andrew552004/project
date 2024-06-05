@@ -3,12 +3,13 @@ This module is the main entry point where web services are defined
 to interact with all external users, including frontend clients
 
 Authors: Andrés Vanegas, Sergio Sanabria
+last update: 4/06/2024
 
 """
 
-from fastapi import FastAPI
-from pydantic import BaseModel, SecretStr
-from pydantic import EmailStr
+from fastapi import FastAPI, HTTPException, Depends, status
+from pydantic import BaseModel
+from passlib.hash import bcrypt
 
 
 app = FastAPI(
@@ -18,38 +19,43 @@ app = FastAPI(
 )
 
 
-@app.get("/trello")
-def verifitrello():
-    """This is a service to validate web services are up."""
-    return {
-        "Message": "This is a 'Trello' project",
-        "version": 1.0,
-    }
-
-class Login(BaseModel):
-    email: EmailStr
-    password: SecretStr
-
-
-@app.post("/login")
-def login(user_info: Login) -> bool:
-    """This service lets authenticate an user using username and password."""
-    # TODO make authentication
-    return False
-
-class SignUp(BaseModel):
+# Model for the user
+class User(BaseModel):
     username: str
-    email: EmailStr
-    password: SecretStr
+    password: str
 
-@app.post("/signup")
-def register(user_info: SignUp) -> bool:
-    """This service registers a new user."""
-    # TODO Add the register logic 
-    #Here we need validate the user data and add to json or the database if we final decide use, idk
-    return True  # This could be change based in the state of SignUp registed or failed
+# Dummy data base
+db_users = {}
 
-"""------------------------------------------------------------------------"""
+# Function for register a new user
+@app.post("/register")
+async def register(user: User):
+    # Verify the existence of one user
+    if user.username in db_users:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Username already registered")
+    
+    # Hash of password before of keep
+    hashed_password = bcrypt.hash(user.password)
+    
+    # simulation for keep the user in DB
+    db_users[user.username] = hashed_password
+    
+    return {"message": "User registered successfully"}
+
+# Function for login
+@app.post("/login")
+async def login(user: User):
+    # Verify the existence of user
+    if user.username not in db_users:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid username or password")
+    
+    # Verify the correct password
+    if not bcrypt.verify(user.password, db_users[user.username]):
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid username or password")
+    
+    return {"message": "Login successful"}
+
+#------------------------------------------------------------------------
 @app.post("/boards/")
 def create_board(name: str):
     # Logic to create a new board

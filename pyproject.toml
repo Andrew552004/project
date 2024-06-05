@@ -1,17 +1,20 @@
 [tool.poetry]
-name = "Final-project"
-version = "0.1.1"
+name = "final_project"
+version = "0.1.2"
 description = "This is the final project for the subject of Software design"
 authors = ["Andrés Vanegas <afvanegasb@udistrital.edu.co> Sergio Sanabria <sasanabriac@udistrital.edu.co>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-fastapi = "^0.111.0"   
-sqlalchemy = "^2.0.30"
+fastapi = "0.111.0"
+uvicorn = "^0.22.0"
+sqlalchemy = "^2.0.20"
+passlib = { version = "1.7.4", extras = ["bcrypt"] }
 pydantic = { version = "^2.7.2", extras = ["email"] }
 click = "^8.1.7"
-uvicorn = "^0.30.0"  
+python-multipart = "^0.0.7"
+python-jose = { version = "^3.3.0", extras = ["cryptography"] }
 
 
 [tool.poetry.group.dev.dependencies]
@@ -20,5 +23,7 @@ pylint = "^3.2.2"
 black = "^24.4.2"
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+
