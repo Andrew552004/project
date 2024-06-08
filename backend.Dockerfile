@@ -1,14 +1,15 @@
-FROM --platform=arm64 python:3.11
-# Arquitectura para procesadores de 64 bits
-# Copia los archivos poetry.lock y pyproject.toml al directorio /app/
-COPY final_project/ .
-WORKDIR /app/
+#This docker file define how build the image for backend container of web app
+FROM python:3.11-slim-buster
 
-RUN pip install --upgrade pip
+WORKDIR /app
+
+COPY final_project/ .
+
+COPY requirements.txt .
+
+RUN pip install --upgrade pip && pip install -r requirements.txt
 
 EXPOSE 8080
+#Defines the command that will be used when the container was executed 
+CMD ["uvicorn", "final_project.main:app", "--host", "0.0.0.0", "--port", "8080"]
 
-CMD ["uvicorn", "--host", "0.0.0.0", "--port", "8080", "--reload"]
-#docker build -t sd_app -f backend.Dockerfile .
-#docker images  
-#docker run -it -p 8000:8000 -v %cd%:/usr/src/app sd_app

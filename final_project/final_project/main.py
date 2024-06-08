@@ -3,21 +3,18 @@ This module is the main entry point where web services are defined
 to interact with all external users, including frontend clients
 
 Authors: Andrés Vanegas, Sergio Sanabria
-last update: 4/06/2024
+last update of this project: 7/06/2024"""
 
-"""
-
-from fastapi import FastAPI, HTTPException, Depends, status
-from pydantic import BaseModel
-from passlib.hash import bcrypt
-
+import os
+from fastapi import FastAPI
+from pydantic import BaseModel, SecretStr
+from dotenv import load_dotenv
 
 app = FastAPI(
     title="Trello Backend Project",
     version="0.1",
     description="This is a web API for consuming services for project management based on virtual boards.",
 )
-
 
 # Model for the user
 class User(BaseModel):
@@ -29,31 +26,24 @@ db_users = {}
 
 # Function for register a new user
 @app.post("/register")
-async def register(user: User):
-    # Verify the existence of one user
-    if user.username in db_users:
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Username already registered")
-    
-    # Hash of password before of keep
-    hashed_password = bcrypt.hash(user.password)
-    
-    # simulation for keep the user in DB
-    db_users[user.username] = hashed_password
-    
+class Register(BaseModel):
+    username: str
+    password: SecretStr
+
+@app.post("/register")
+async def register_user(register: Register):
     return {"message": "User registered successfully"}
 
 # Function for login
+class Login(BaseModel):
+    username: str
+    password: SecretStr
+
 @app.post("/login")
-async def login(user: User):
-    # Verify the existence of user
-    if user.username not in db_users:
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid username or password")
-    
-    # Verify the correct password
-    if not bcrypt.verify(user.password, db_users[user.username]):
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid username or password")
-    
-    return {"message": "Login successful"}
+def login(user_info: Login) -> bool:
+    """This service lets authenticate an user using username and password."""
+    # TODO make authentication
+    return False
 
 #------------------------------------------------------------------------
 @app.post("/boards/")
@@ -89,4 +79,4 @@ def get_cards_in_list(board_id: int, list_id: int):
 @app.delete("/boards/{board_id}/cards/{card_id}/")
 def delete_card(board_id: int, card_id: int):
     # Here put the logic 
-    return {"message": f"Card {card_id} deleted successfully from board {board_id}"}
+    return {"message": f"Card {card_id} deleted successfully from board {board_id}"}

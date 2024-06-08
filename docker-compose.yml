@@ -1,0 +1,48 @@
+#Iknow this is code smell
+version: "3.8"
+services:
+  #Here we can create differents containers
+  postgres:
+    #In image we use the last version of PG
+    image: postgres 
+    #Defines the behavior of the container to restart in case this stops
+    restart: always
+    #By default its 5432 if we need change it just modify the first part
+    ports:
+      - "5432:5432"
+    #This is the enviroment variables
+    environment:
+      #HOST IP DB
+      - DATABASE_HOST=127.0.0.1
+      #These 3 establish names and password
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=c0ntr4
+      - POSTGRES_DB=root
+    # Mount the volume 'postgres-data' to the location of the PostgreSQL data.
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    #Join to the network 'mp-project-network'
+    networks:
+    - mp-project-network
+  #This is the other image for backend
+  mp-project-backend:
+    image: mp-project
+    container_name: mp-project-backend
+    restart: always
+    build:
+      context: .
+      dockerfile: backend.Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    networks:
+      - mp-project-network
+
+volumes:
+  postgres-data:
+    driver: local
+
+networks:
+  mp-project-network:
+    driver: bridge
