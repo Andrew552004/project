@@ -7,22 +7,25 @@ This project is the final asignment for the subject of software desing to desmot
 ![Canvas](https://github.com/Andrew552004/project/assets/149690633/a7efcc5b-e1f3-437b-85a9-7a3f7e517e8d)
 
 
-### Business Rules
-  
+#User stories**
 
+• As a user, I want to move tasks between different columns on my dashboard, such as "To Do", "In Progress", and "Completed", so that I can track the progress of my tasks.
 
-## User Stories
+• As a user, I want to add comments to tasks, so that I can provide more information or relevant context.
 
-As a _<user>_, I want_<to move tasks between different columns on my dashboard, such as "To Do", "In Progress", and "Completed">_, so what_<track the progress of my tasks>_.
-As a _<user>_, I want _<to add comments to tasks>_, so what_ <provide more information or relevant context>_.
-As a _<product manager>, I want_<to add new tasks to my board, assign them a description, and set a due date>_, so what_<manage my tasks effectively>_.
-As a _<product manager>_, I want_<to assign tasks to other users and receive notifications when they are completed>_, so what_<collaborate with others and stay updated>_.
-As a_<system administrator>_, I want_<to manage users, their access permissions, and general system settings>_, so what_<ensure the smooth operation of the system>_.
-As a _<scrum master>, I want_<to create a new board>_, so what_<organize my different projects or work areas>.
-As a_<scrum master>_, I want_<to assign boards to users>_, so what_<map users into a project, synchronizing the team>_.
-As a_ <scrum master>_, I want_<to cancel activities>_,so what_<foresee unexpected changes in requirements >_.
-As a_ <scrum master>_, I want_<to initialize sprints once the current is over>_,<keep adding value to the project, sticking to the agile framework>_.
+• As a product manager, I want to add new tasks to my board, assign them a description, and set a due date, so that I can manage my tasks effectively.
 
+• As a product manager, I want to assign tasks to other users and receive notifications when they are completed, so that I can collaborate with others and stay updated.
+
+• As a system administrator, I want to manage users, their access permissions, and general system settings, so that I can ensure the smooth operation of the system.
+
+• As a scrum master, I want to create a new board, so that I can organize my different projects or work areas.
+
+• As a scrum master, I want to assign boards to users, so that I can map users into a project, synchronizing the team.
+
+• As a scrum master, I want to cancel activities, so that I can foresee unexpected changes in requirements.
+
+• As a scrum master, I want to initialize sprints once the current one is over, to keep adding value to the project, sticking to the agile framework.
 
 
 ## Technical Definitions
