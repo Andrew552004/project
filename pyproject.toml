@@ -2,7 +2,12 @@
 name = "final_project"
 version = "0.1.2"
 description = "This is the final project for the subject of Software design"
-authors = ["Andrés Vanegas <afvanegasb@udistrital.edu.co> Sergio Sanabria <sasanabriac@udistrital.edu.co>"]
+authors = [
+    "Carlos A. Sierra <cavirguezs@udistrital.edu.co>",
+    "Andrés F. Vanegas <afvanegasb@udistrital.edu.co>",
+    "Sanabria <sasanabriac@udistrital.edu.co>"]",
+    "Andrés F. Vanegas <afvanegasb@udistrital.edu.co>"
+]
 readme = "README.md"
 
 [tool.poetry.dependencies]
