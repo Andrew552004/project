@@ -4,6 +4,7 @@ This project is the final asignment for the subject of software desing to desmot
 
 ## Business Model
 
+![Canvas](https://github.com/Andrew552004/project/assets/149690633/a7efcc5b-e1f3-437b-85a9-7a3f7e517e8d)
 
 
 ### Business Rules
