@@ -34,5 +34,23 @@ In this case, the backend will be build using _python 3.10_, and some related te
 
 
 
-# Processes
+## How to Use
+
+Follow these steps to set up and use the project:
+
+1. **Make sure you have Docker installed and that you have virtualization on your machine activated and can use local scripts***
+
+2. **Copy this for builds the images defined in the docker-compose.yml.**
+   ```bash
+   docker compose build
+   ```
+3. **Copy this for brings up the services, creating and starting the containers.**
+   ```bash
+   docker-compose up
+   ```
+4. **Put this for generate the poetry.lock**
+   ```bash
+   poetry lock
+   ```
+5. **If you had insomnia installed you can test our end points**
 
