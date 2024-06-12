@@ -66,5 +66,5 @@ Follow these steps to set up and use the project:
    ```bash
    poetry lock
    ```
-5. **If you had insomnia installed you can dowload our file for test our end points**
+5. **If you had insomnia installed you can dowload our file(endpoint project) for test our end points**
 
