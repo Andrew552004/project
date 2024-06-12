@@ -28,9 +28,7 @@ This project is the final asignment for the subject of software desing to desmot
 • As an administrator, I want to register an account with administrative privileges to manage the system.  
 • As an administrator, I want to log in to my administrative account to manage system configurations and permissions.  
 
-## Technical Definitions
-
-### Tools to Use
+## Tools used
 
 In this case, the backend will be built using Python 3.10, leveraging Fast API to serve functionalities, PyTest for conducting simple unit tests, and Black for auto-formatting the code to enhance readability. Additionally, we'll employ the following tools:
 
@@ -45,9 +43,9 @@ Backend:
 7. Insomnia    
 8. Poetry
    
-Databases:  
+### Databases:  
 
-PostgreSQL"
+1. PostgreSQL"
 
 
 ## How to Use
