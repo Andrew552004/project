@@ -4,7 +4,7 @@ This project is the final asignment for the subject of software desing to desmot
 
 ## Poster
 <p align="center">
-<img src="https://github.com/Andrew552004/project-docker/assets/149690633/c5fe2476-e654-4d42-bb3f-0594a886aa45](https://github.com/Andrew552004/project-docker/blob/main/F54E0cIpSUWjLjjb2KEshA.webp" alt="FastAPI logo" width="600">
+<img src="https://github.com/Andrew552004/project-docker/blob/main/F54E0cIpSUWjLjjb2KEshA.webp" alt="FastAPI logo" width="600">
 </p>
 
 ## Business Model
