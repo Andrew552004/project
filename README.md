@@ -3,16 +3,15 @@
 This project is the final asignment for the subject of software desing to desmotrate our abilities on backend, in our case the project will be based on trello app (activity manager based on boards) using, _design patterns_, and some _good code practices_ in order to provide a __RESTful API__ with services like login,register, and control of tasks and boards in function of their progress.
 
 ## Poster
-![Canvas](https://github.com/Andrew552004/project-docker/blob/main/F54E0cIpSUWjLjjb2KEshA.webp)
 <p align="center">
-<img src="[https://github.com/Andrew552004/project-docker/assets/149690633/c5fe2476-e654-4d42-bb3f-0594a886aa45](https://github.com/Andrew552004/project/assets/149690633/a7efcc5b-e1f3-437b-85a9-7a3f7e517e8d](https://github.com/Andrew552004/project-docker/blob/main/F54E0cIpSUWjLjjb2KEshA.webp)" alt="FastAPI logo" width="600">
+<img src="https://github.com/Andrew552004/project-docker/assets/149690633/c5fe2476-e654-4d42-bb3f-0594a886aa45](https://github.com/Andrew552004/project-docker/blob/main/F54E0cIpSUWjLjjb2KEshA.webp" alt="FastAPI logo" width="600">
 </p>
 
 ## Business Model
-
 <p align="center">
-<img src="[https://github.com/Andrew552004/project-docker/assets/149690633/c5fe2476-e654-4d42-bb3f-0594a886aa45](https://github.com/Andrew552004/project/assets/149690633/a7efcc5b-e1f3-437b-85a9-7a3f7e517e8d)" alt="FastAPI logo" width="600">
+<img src="https://github.com/Andrew552004/project-docker/assets/149690633/c5fe2476-e654-4d42-bb3f-0594a886aa45" alt="FastAPI logo" width="600">
 </p>
+
 
 
 ## User stories
